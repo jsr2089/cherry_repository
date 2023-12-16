@@ -45,6 +45,7 @@ jobs:
         with: 
           resource-group: aks-rg
           name: my-container-app
+          dns-name-label: https://my-container-app.orangewave-11b8db39.centralindia.azurecontainerapps.io
           
      
 

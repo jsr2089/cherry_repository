@@ -31,7 +31,14 @@ jobs:
         with:
          Username: jsr2089
          Password: L0ve@dockerhub # recently changed
-        
+
+      - name: Docker Pull Auto Action 
+        uses: codebysandip/docker-pull-auto-action@v1.5
+        with: 
+          docker-image: nginx
+          docker-tag: stable-alpine3.17-slim
+          domain: docker.io
+          
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:

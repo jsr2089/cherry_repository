@@ -25,7 +25,10 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.MYCONTAINERAPP_AZURE_CREDENTIALS }}
-
+          
+      - name: Docker Login
+        uses: docker/login-action@v3.0.0
+        
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:

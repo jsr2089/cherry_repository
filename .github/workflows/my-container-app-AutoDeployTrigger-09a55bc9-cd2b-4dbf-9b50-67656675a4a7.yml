@@ -40,17 +40,11 @@ jobs:
           domain: docker.io
           hook-secret: v1.0
           
-      - name: Build and push container image to registry
-        uses: azure/container-apps-deploy-action@v2
-        with:
-          appSourcePath: ${{ github.workspace }} 
-          registryUrl: https://registry.hub.docker.com/v2/jsr2089/
-          registryUsername: ${{ secrets.MYCONTAINERAPP_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.MYCONTAINERAPP_REGISTRY_PASSWORD }}
-          containerAppName: my-container-app
-          resourceGroup: aks-rg
-          imageToBuild: jsr2089/my-container-app:${{ github.sha }}
-          dockerfilePath: Dockerfile
-
+      - name: Deploy to Azure Container Instances
+        uses: Azure/aci-deploy@v1
+        with: 
+          resource-group: aks-rg
+          name: my-container-app
+          
      
 

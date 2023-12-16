@@ -30,7 +30,7 @@ jobs:
         uses: docker/login-action@v3.0.0
         with:
          Username: jsr2089
-         Password: L0ve@dockerhub
+         Password: L0ve@dockerhub # recently changed
         
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
